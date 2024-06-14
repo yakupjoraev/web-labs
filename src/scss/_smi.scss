@@ -1,0 +1,36 @@
+.smi {
+
+  // .smi__inner
+
+  &__inner {}
+
+  // .smi__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+  // .smi__item
+
+  &__item {}
+
+  // .smi__item-img
+
+  &__item-img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}

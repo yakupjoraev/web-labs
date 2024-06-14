@@ -1,0 +1,110 @@
+.nums {
+  position: relative;
+  z-index: 1;
+  margin-top: -650px;
+  border-radius: 100px 100px 0 0;
+  backdrop-filter: blur(40px);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 120px 0 60px;
+
+  @media (max-width: $breakpoint1450) {
+    border-radius: 80px 80px 0 0;
+  }
+
+  @media (max-width: $breakpoint992) {
+    margin-top: -200px;
+    padding-top: 80px;
+    border-radius: 60px 60px 0 0;
+  }
+
+  @media (max-width: $breakpoint768) {
+    margin-top: -100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 40px 40px 0 0;
+  }
+
+
+  // .nums__inner
+
+  &__inner {
+
+    .section-head {
+      margin-bottom: 60px;
+    }
+  }
+
+  // .nums__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 10px;
+    }
+  }
+
+  // .nums__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    height: 260px;
+    border-radius: 20px;
+    background-image: url('../img/icons/nums-border.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:nth-child(even) {
+      margin-top: 100px;
+
+      @media (max-width: $breakpoint992) {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: $breakpoint768) {
+      height: auto;
+      min-height: 200px;
+      background-position-y: 2px;
+      background-position-x: left;
+    }
+  }
+
+  // .nums__item-num
+
+  &__item-num {
+    max-width: 200px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--white);
+    transition: 0.2s linear;
+  }
+
+  // .nums__item-text
+
+  &__item-text {
+    max-width: 200px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--white);
+  }
+}

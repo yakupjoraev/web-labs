@@ -1,0 +1,141 @@
+.tehno {
+
+  // .tehno__inner
+
+  &__inner {}
+
+  // .tehno__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+  }
+
+  // .tehno__item
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-content: baseline;
+    border-radius: 20px;
+    padding: 40px;
+    background: var(--gray);
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 60px;
+      left: 60px;
+      background: var(--green);
+      height: 32px;
+      width: 32px;
+      border-radius: 32px;
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      transition: transform 0.3s ease-out;
+    }
+
+
+
+    @media (hover:hover) {
+      &:hover:before {
+        transform: scale(40);
+      }
+
+      &:hover {
+        .tehno__item-icon {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(107%) contrast(104%);
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint1450) {
+      padding: 40px 20px;
+    }
+  }
+
+  // .tehno__item-head
+
+  &__item-head {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 32px;
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  // .tehno__item-icon
+
+  &__item-icon {
+    transition: filter 0.3s ease-out;
+
+    @media (max-width: $breakpoint768) {
+      width: 60px;
+      height: 60px;
+    }
+
+  }
+
+  // .tehno__item-label
+
+  &__item-label {
+    font-size: 32px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: var(--white);
+
+    @media (max-width: $breakpoint768) {
+      font-size: 22px;
+    }
+
+  }
+
+  // .tehno__sublist
+
+  &__sublist {
+    display: flex;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  // .tehno__subitem
+
+  &__subitem {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: fit-content;
+    padding: 12px 24px;
+    border-radius: 500px;
+    background-color: #242424;
+  }
+
+  // .tehno__subitem-icon
+
+  &__subitem-icon {}
+
+  // .tehno__subitem-text
+
+  &__subitem-text {
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--white);
+  }
+}
