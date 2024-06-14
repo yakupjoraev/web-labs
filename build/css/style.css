@@ -486,6 +486,18 @@ body.locked {
   color: #000;
 }
 
+.projects__arrow--next {
+  position: static;
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
+  background-image: url("data:image/svg+xml,%3Csvg width='128' height='40' viewBox='0 0 128 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.49995 18.7502H122.481L117.119 13.3814C116.914 13.1423 116.807 12.8347 116.819 12.5201C116.831 12.2055 116.962 11.9071 117.184 11.6845C117.407 11.4619 117.705 11.3314 118.02 11.3193C118.334 11.3071 118.642 11.4141 118.881 11.6189L126.381 19.1189C126.528 19.2633 126.638 19.4408 126.703 19.6365C126.767 19.8323 126.783 20.0406 126.75 20.2439C126.693 20.4793 126.575 20.6952 126.406 20.8689L118.906 28.3689C118.794 28.4998 118.656 28.6061 118.501 28.6811C118.346 28.7561 118.177 28.7983 118.005 28.8049C117.833 28.8116 117.661 28.7826 117.501 28.7197C117.34 28.6569 117.195 28.5616 117.073 28.4397C116.951 28.3179 116.856 28.1722 116.793 28.0118C116.73 27.8514 116.701 27.6798 116.708 27.5076C116.714 27.3355 116.757 27.1665 116.832 27.0115C116.907 26.8564 117.013 26.7185 117.144 26.6064L122.481 21.2502H2.49995C2.16843 21.2502 1.85049 21.1185 1.61607 20.8841C1.38165 20.6496 1.24995 20.3317 1.24995 20.0002C1.24995 19.6687 1.38165 19.3507 1.61607 19.1163C1.85049 18.8819 2.16843 18.7502 2.49995 18.7502Z' fill='%233C3C3C' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  -webkit-box-sizing: 120px 60px;
+          box-sizing: 120px 60px;
+  background-position-x: right;
+}
+
 .tehno__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1334,6 +1346,10 @@ body.locked {
     border-radius: 80px 80px 0 0;
   }
 
+  .projects {
+    padding: 60px 0 80px;
+  }
+
   .projects__item-text {
     font-size: 28px;
   }
@@ -1453,6 +1469,10 @@ body.locked {
 
   .nums__item:nth-child(even) {
     margin-top: 0;
+  }
+
+  .projects {
+    padding: 60px 0;
   }
 
   .tehno__list {
@@ -1678,6 +1698,80 @@ body.locked {
     min-height: 200px;
     background-position-y: 2px;
     background-position-x: left;
+  }
+
+  .projects {
+    padding: 40px 0;
+  }
+
+  .projects__item {
+    min-height: 400px;
+  }
+
+  .projects__item-texts {
+    row-gap: 10px;
+  }
+
+  .projects__item-text {
+    font-size: 22px;
+  }
+
+  .projects__controller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .projects__controller .swiper-pagination-fraction {
+    width: auto;
+  }
+
+  .projects__scrollbar {
+    background-color: transparent;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #484848;
+  }
+
+  .projects__scrollbar .swiper-pagination-current {
+    color: var(--green);
+  }
+
+  .projects__arrow {
+    width: 120px;
+    height: 40px;
+    font-size: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .projects__arrow.swiper-button-disabled {
+    opacity: 1;
+  }
+
+  .projects__arrow--prev {
+    position: static;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
+    background-image: url("data:image/svg+xml,%3Csvg width='128' height='40' viewBox='0 0 128 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M125.5 18.7502H5.5188L10.8813 13.3814C11.0861 13.1423 11.1931 12.8347 11.1809 12.5201C11.1688 12.2055 11.0384 11.9071 10.8158 11.6845C10.5931 11.4619 10.2947 11.3314 9.98011 11.3193C9.66552 11.3071 9.35792 11.4141 9.1188 11.6189L1.6188 19.1189C1.47181 19.2633 1.36161 19.4408 1.29745 19.6365C1.23328 19.8323 1.21703 20.0406 1.25005 20.2439C1.30652 20.4793 1.42525 20.6952 1.5938 20.8689L9.0938 28.3689C9.20586 28.4998 9.34375 28.6061 9.49883 28.6811C9.65391 28.7561 9.82283 28.7983 9.99498 28.8049C10.1671 28.8116 10.3388 28.7826 10.4992 28.7197C10.6596 28.6569 10.8053 28.5616 10.9271 28.4397C11.0489 28.3179 11.1442 28.1722 11.2071 28.0118C11.2699 27.8514 11.2989 27.6798 11.2923 27.5076C11.2856 27.3355 11.2435 27.1665 11.1685 27.0115C11.0934 26.8564 10.9871 26.7185 10.8563 26.6064L5.5188 21.2502H125.5C125.832 21.2502 126.15 21.1185 126.384 20.8841C126.618 20.6496 126.75 20.3317 126.75 20.0002C126.75 19.6687 126.618 19.3507 126.384 19.1163C126.15 18.8819 125.832 18.7502 125.5 18.7502Z' fill='%233C3C3C' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    -webkit-box-sizing: 120px 60px;
+            box-sizing: 120px 60px;
   }
 
   .tehno__item-head {

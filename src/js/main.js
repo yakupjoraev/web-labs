@@ -109,7 +109,6 @@ function projectsSlider() {
     centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: 20,
-    direction: "vertical",
     navigation: {
       nextEl: ".projects__arrow--next",
       prevEl: ".projects__arrow--prev",
