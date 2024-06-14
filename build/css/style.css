@@ -110,6 +110,7 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 140%;
+  color: var(--white);
 }
 
 body.locked {
@@ -383,6 +384,106 @@ body.locked {
   letter-spacing: -0.03em;
   text-align: center;
   color: var(--white);
+}
+
+.projects {
+  padding: 60px 0 120px;
+}
+
+.projects__main {
+  padding-bottom: 40px;
+}
+
+.projects__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.projects__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 20px;
+  min-height: 470px;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: var(--gray);
+}
+
+.projects__item-texts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.projects__item-text {
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.projects__scrollbar {
+  max-width: 1020px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #1d1d1d;
+  border-radius: 500px;
+}
+
+.projects__scrollbar .swiper-pagination-progressbar-fill {
+  position: absolute;
+  background-color: var(--green);
+  scale: 1;
+}
+
+.projects__scrollbar .swiper-pagination-progressbar-fill::before {
+  content: "Skroll";
+  position: absolute;
+  right: 0;
+  top: -23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 500px;
+  padding: 20px 40px;
+  width: 118px !important;
+  height: 50px !important;
+  background-color: var(--white);
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: #000;
 }
 
 .tehno__list {
@@ -1231,6 +1332,10 @@ body.locked {
 
   .nums {
     border-radius: 80px 80px 0 0;
+  }
+
+  .projects__item-text {
+    font-size: 28px;
   }
 
   .tehno__item {

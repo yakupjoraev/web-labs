@@ -1,0 +1,102 @@
+.projects {
+  padding: 60px 0 120px;
+
+  // .projects__inner
+
+  &__inner {}
+
+  // .projects__main
+
+  &__main {
+    padding-bottom: 40px;
+  }
+
+  // .projects__list
+
+  &__list {
+    display: flex;
+    align-items: center;
+    transition: 0.2s linear;
+  }
+
+  // .projects__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+    min-height: 470px;
+    border-radius: 20px;
+    padding: 40px;
+    background-color: var(--gray);
+
+  }
+
+  // .projects__item-head
+
+  &__item-head {}
+
+  // .projects__item-pic
+
+  &__item-pic {}
+
+  // .projects__item-texts
+
+  &__item-texts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  // .projects__item-text
+
+  &__item-text {
+    font-size: 32px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: var(--white);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 28px;
+    }
+  }
+
+  // .projects__scrollbar 
+  &__scrollbar {
+    max-width: 1020px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: #1d1d1d;
+    border-radius: 500px;
+
+    .swiper-pagination-progressbar-fill {
+      position: absolute;
+      background-color: var(--green);
+      scale: 1;
+
+      &::before {
+        content: 'Skroll';
+        position: absolute;
+        right: 0;
+        top: -23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 500px;
+        padding: 20px 40px;
+        width: 118px !important;
+        height: 50px !important;
+        background-color: var(--white);
+        transform: none !important;
+
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: -0.03em;
+        color: #000;
+      }
+    }
+  }
+}
