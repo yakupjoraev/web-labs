@@ -403,51 +403,8 @@ function clientsSlider() {
         },
       }
     },
-    on: {
-      reachEnd: function () {
-        // Разрешить скролл страницы, когда пользователь доскроллил до конца слайдера
-        document.body.classList.remove('hidden');
-      },
-      slideChange: function () {
-        if (!swiper.isEnd) {
-          // Запретить скролл страницы, когда слайдер в движении
-          document.body.classList.add('hidden');
-        }
-      }
-    }
   });
 
-  const projectsSection = document.querySelector('.clients');
-  let isScrolling = false;
-  let hasHiddenClassBeenAdded = false;
-
-  window.addEventListener('scroll', function () {
-    const sectionTop = projectsSection.getBoundingClientRect().top;
-    const sectionBottom = projectsSection.getBoundingClientRect().bottom;
-    const viewportHeight = window.innerHeight;
-
-    if (!hasHiddenClassBeenAdded && sectionTop < viewportHeight / 2 && sectionBottom > viewportHeight / 2) {
-      // Если секция находится в середине экрана, заблокировать скролл страницы
-      document.body.classList.add('hidden');
-      hasHiddenClassBeenAdded = true;
-    } else if (hasHiddenClassBeenAdded && (sectionTop >= viewportHeight || sectionBottom <= 0)) {
-      // Разрешить скролл страницы, если пользователь вышел из секции проектов
-      document.body.classList.remove('hidden');
-    }
-  });
-
-  // Добавить управление слайдами при скролле
-  window.addEventListener('wheel', function (e) {
-    if (document.body.classList.contains('hidden') && !isScrolling) {
-      isScrolling = true;
-      if (e.deltaY > 0) {
-        swiper.slideNext();
-      } else {
-        swiper.slidePrev();
-      }
-      setTimeout(() => { isScrolling = false; }, 600); // Задержка для завершения анимации слайда
-    }
-  });
 }
 
 clientsSlider();
