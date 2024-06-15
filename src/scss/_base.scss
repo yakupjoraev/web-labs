@@ -8,19 +8,27 @@
   }
 }
 
+.other-sections {
+  background-image: url('../img/section-bg/other-sections-elements.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 500px;
+
+}
+
 .section-bottom {
   position: relative;
-  bottom: -140px;
+  margin-bottom: -140px;
   padding-top: 120px;
   padding-bottom: 260px;
 
   @media (max-width: $breakpoint1450) {
-    bottom: -200px;
+    margin-bottom: -200px;
   }
 
   @media (max-width: $breakpoint992) {
     padding-top: 60px;
-    bottom: -120px;
+    margin-bottom: -120px;
     padding-bottom: 200px;
   }
 
@@ -89,4 +97,84 @@
   @media (max-width: $breakpoint768) {
     font-size: 26px;
   }
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--green);
+  border-radius: 500px;
+  padding: 6px 40px 6px 6px;
+  width: 180px;
+  height: 52px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  transition: 0.3s linear;
+
+  &.animation {
+    animation: btnAnimation 0.6 linear;
+
+    padding: 6px 6px 6px 36px;
+    background-color: var(--green);
+
+    .btn__arrow {
+      width: calc(100% - 12px);
+      right: 6px !important;
+      border-radius: 500px;
+      background-color: var(--white);
+    }
+
+    .btn__arrow-icon {
+      filter: brightness(0) saturate(100%) invert(50%) sepia(7%) saturate(2644%) hue-rotate(93deg) brightness(121%) contrast(86%);
+    }
+  }
+
+  @media (hover:hover) {
+    &:hover {
+      padding: 6px 6px 6px 36px;
+      background-color: var(--green);
+
+      .btn__arrow {
+        right: calc(100% - 46px);
+        background-color: var(--white);
+      }
+
+      .btn__arrow-icon {
+        filter: brightness(0) saturate(100%) invert(50%) sepia(7%) saturate(2644%) hue-rotate(93deg) brightness(121%) contrast(86%);
+      }
+    }
+  }
+
+}
+
+.btn__arrow {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--green);
+  transition: 0.4s linear;
+}
+
+.btn__arrow-icon {
+  transition: 0.2s linear;
+}
+
+@keyframes btnAnimation {
+  0% {}
+
+  10% {}
 }

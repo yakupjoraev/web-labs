@@ -76,6 +76,7 @@
   background-image: url('../img/section-bg/form-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: -100px;
 
 
   @media (max-width: $breakpoint1450) {
@@ -133,7 +134,34 @@
 
   // .form__btn
 
-  &__btn {}
+  &__btn {
+    width: 400px;
+    height: 100px;
+    margin: 10px auto 0;
+    background-color: transparent;
+
+    font-size: 32px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: var(--white);
+
+    .btn__arrow {
+      width: 90px;
+      height: 90px;
+    }
+
+    @media (hover: hover) {
+      &:hover .btn__arrow {
+        right: calc(100% - 96px);
+        background-color: var(--white);
+      }
+    }
+
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+      padding: 6px 72px 6px 6px;
+    }
+  }
 }
 
 

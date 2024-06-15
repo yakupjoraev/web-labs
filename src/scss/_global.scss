@@ -22,6 +22,13 @@
   }
 }
 
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+  scrollbar-gutter: stable;
+}
+
 // Body Locked
 body {
   background-color: #000000;
@@ -32,6 +39,15 @@ body {
 
   &.locked {
     overflow: hidden;
+  }
+
+  &.hidden {
+    overflow: hidden;
+
+    @media (max-width: $breakpoint768) {
+      overflow: auto;
+    }
+
   }
 }
 

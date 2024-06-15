@@ -106,13 +106,13 @@
     max-width: 1020px;
     margin: 0 auto;
     margin-top: 40px;
-    background-color: #1d1d1d;
-    border-radius: 500px;
+    // background-color: #1d1d1d;
+    // border-radius: 500px;
 
     .swiper-pagination-progressbar-fill {
       position: absolute;
       background-color: var(--green);
-      scale: 1;
+      scale: 1 !important;
 
       &::before {
         content: 'Skroll';
@@ -186,13 +186,77 @@
   // .projects__arrow--next
 
   &__arrow--next {
-    position: static;
-    transform: translate(0);
-    background-image: url("data:image/svg+xml,%3Csvg width='128' height='40' viewBox='0 0 128 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.49995 18.7502H122.481L117.119 13.3814C116.914 13.1423 116.807 12.8347 116.819 12.5201C116.831 12.2055 116.962 11.9071 117.184 11.6845C117.407 11.4619 117.705 11.3314 118.02 11.3193C118.334 11.3071 118.642 11.4141 118.881 11.6189L126.381 19.1189C126.528 19.2633 126.638 19.4408 126.703 19.6365C126.767 19.8323 126.783 20.0406 126.75 20.2439C126.693 20.4793 126.575 20.6952 126.406 20.8689L118.906 28.3689C118.794 28.4998 118.656 28.6061 118.501 28.6811C118.346 28.7561 118.177 28.7983 118.005 28.8049C117.833 28.8116 117.661 28.7826 117.501 28.7197C117.34 28.6569 117.195 28.5616 117.073 28.4397C116.951 28.3179 116.856 28.1722 116.793 28.0118C116.73 27.8514 116.701 27.6798 116.708 27.5076C116.714 27.3355 116.757 27.1665 116.832 27.0115C116.907 26.8564 117.013 26.7185 117.144 26.6064L122.481 21.2502H2.49995C2.16843 21.2502 1.85049 21.1185 1.61607 20.8841C1.38165 20.6496 1.24995 20.3317 1.24995 20.0002C1.24995 19.6687 1.38165 19.3507 1.61607 19.1163C1.85049 18.8819 2.16843 18.7502 2.49995 18.7502Z' fill='%233C3C3C' /%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    box-sizing: 120px 60px;
-    background-position-x: right;
+    @media (max-width: $breakpoint768) {
+      position: static;
+      transform: translate(0);
+      background-image: url("data:image/svg+xml,%3Csvg width='128' height='40' viewBox='0 0 128 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.49995 18.7502H122.481L117.119 13.3814C116.914 13.1423 116.807 12.8347 116.819 12.5201C116.831 12.2055 116.962 11.9071 117.184 11.6845C117.407 11.4619 117.705 11.3314 118.02 11.3193C118.334 11.3071 118.642 11.4141 118.881 11.6189L126.381 19.1189C126.528 19.2633 126.638 19.4408 126.703 19.6365C126.767 19.8323 126.783 20.0406 126.75 20.2439C126.693 20.4793 126.575 20.6952 126.406 20.8689L118.906 28.3689C118.794 28.4998 118.656 28.6061 118.501 28.6811C118.346 28.7561 118.177 28.7983 118.005 28.8049C117.833 28.8116 117.661 28.7826 117.501 28.7197C117.34 28.6569 117.195 28.5616 117.073 28.4397C116.951 28.3179 116.856 28.1722 116.793 28.0118C116.73 27.8514 116.701 27.6798 116.708 27.5076C116.714 27.3355 116.757 27.1665 116.832 27.0115C116.907 26.8564 117.013 26.7185 117.144 26.6064L122.481 21.2502H2.49995C2.16843 21.2502 1.85049 21.1185 1.61607 20.8841C1.38165 20.6496 1.24995 20.3317 1.24995 20.0002C1.24995 19.6687 1.38165 19.3507 1.61607 19.1163C1.85049 18.8819 2.16843 18.7502 2.49995 18.7502Z' fill='%233C3C3C' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      box-sizing: 120px 60px;
+      background-position-x: right;
+    }
+
   }
+}
+
+.projects__controller {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1d1d1d;
+    border-radius: 500px;
+    height: 100%;
+    width: 60%;
 
 
+    @media (max-width: $breakpoint768) {
+      content: none;
+    }
+  }
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: static;
+  bottom: 0;
+  height: 4px;
+  max-width: 1820px;
+  margin: 0 auto;
+  margin-top: 80px;
+  // background-color: #1d1d1d;
+  // border-radius: 500px;
+
+
+  font-size: 0;
+}
+
+.swiper-scrollbar-drag {
+  background: none;
+}
+
+
+.swiper-scrollbar-drag:after {
+  content: 'Skroll';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 500px;
+  padding: 20px 40px;
+  width: 118px;
+  height: 50px;
+  background-color: var(--white);
+
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: #000;
+  cursor: pointer;
 }
