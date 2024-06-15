@@ -228,10 +228,12 @@
     position: fixed;
     background: #000;
     left: 0;
-    top: 0;
+    top: -100%;
     height: 100vh;
     width: 100vw;
-    display: none;
+    user-select: none;
+    pointer-events: none;
+    transition: 0.2s linear;
 
     &.active {
       display: flex;
