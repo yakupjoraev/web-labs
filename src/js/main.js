@@ -178,63 +178,6 @@ reviewsSlider();
 
 
 
-// function projectsSlider() {
-//   const swiper = new Swiper(".projects__main", {
-//     centeredSlides: true,
-//     slidesPerView: 1,
-//     spaceBetween: 20,
-//     navigation: {
-//       nextEl: ".projects__arrow--next",
-//       prevEl: ".projects__arrow--prev",
-//     },
-
-//     pagination: {
-//       el: ".projects__scrollbar",
-//       type: "fraction",
-//     },
-
-
-//     mousewheel: {
-//       sensitivity: 1,
-//     },
-
-//     breakpoints: {
-//       // when window width is >= 320px
-//       320: {
-//         centeredSlides: true,
-//         slidesPerView: 1,
-//       },
-
-//       // when window width is >= 767
-//       767: {
-//         spaceBetween: 20,
-//         grabCursor: true,
-//         centeredSlides: false,
-//         slidesPerView: 3,
-//         direction: "horizontal",
-
-//         // pagination: {
-//         //   el: ".projects__scrollbar",
-//         //   type: "progressbar",
-//         //   hide: true,
-//         // },
-
-//         // Scrollbar
-//         scrollbar: {
-//           el: '.projects__scrollbar',
-//           // Makes the Scrollbar Draggable
-//           draggable: true,
-//           // Snaps slider position to slides when you release Scrollbar
-//           snapOnRelease: true,
-//           // Size (Length) of Scrollbar Draggable Element in px
-//           dragSize: 'auto',
-//         },
-//       }
-//     }
-//   });
-// }
-// projectsSlider();
-
 function projectsSlider() {
   const swiper = new Swiper(".projects__main", {
     centeredSlides: true,
@@ -321,51 +264,6 @@ function projectsSlider() {
 projectsSlider();
 
 
-// function clientsSlider() {
-//   const swiper = new Swiper(".clients__slider", {
-//     centeredSlides: true,
-//     slidesPerView: 1,
-//     spaceBetween: 20,
-//     navigation: {
-//       nextEl: ".clients__arrow--next",
-//       prevEl: ".clients__arrow--prev",
-//     },
-
-//     pagination: {
-//       el: ".clients__scrollbar",
-//       type: "fraction",
-//     },
-
-//     mousewheel: {
-//       sensitivity: 1,
-//     },
-
-//     breakpoints: {
-//       // when window width is >= 320px
-//       320: {
-//         centeredSlides: true,
-//         slidesPerView: 1,
-//       },
-
-//       // when window width is >= 767
-//       767: {
-//         centeredSlides: false,
-//         spaceBetween: 20,
-//         grabCursor: true,
-//         slidesPerView: 6,
-//         direction: "horizontal",
-
-//         pagination: {
-//           el: ".clients__scrollbar",
-//           type: "progressbar",
-//           hide: true,
-//         },
-
-//       }
-//     }
-//   });
-// }
-// clientsSlider();
 
 function clientsSlider() {
   const swiper = new Swiper(".clients__slider", {
