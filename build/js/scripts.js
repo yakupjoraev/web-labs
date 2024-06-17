@@ -205,6 +205,19 @@ function projectsSlider() {
         spaceBetween: 20,
         grabCursor: true,
         centeredSlides: false,
+        slidesPerView: 2,
+        direction: "horizontal",
+        scrollbar: {
+          el: '.projects__scrollbar',
+          draggable: true,
+          snapOnRelease: true,
+          dragSize: 'auto',
+        },
+      },
+      991: {
+        spaceBetween: 20,
+        grabCursor: true,
+        centeredSlides: false,
         slidesPerView: 3,
         direction: "horizontal",
         scrollbar: {
