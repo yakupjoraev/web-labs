@@ -584,6 +584,10 @@ body.hidden {
      object-fit: cover;
 }
 
+.hero-video--mobile {
+  display: none;
+}
+
 .nums {
   position: relative;
   z-index: 1;
@@ -2360,6 +2364,14 @@ body.hidden {
 
   .hero__partners-img {
     max-width: 116px;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-video--mobile {
+    display: block;
   }
 
   .nums {

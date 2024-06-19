@@ -17,13 +17,13 @@
         <ul class="hero__partners-list">
           <li class="hero__partners-item">
             <a class="hero__partners-link" href="#" target="_blank">
-              <img class="hero__partners-img" src="./img/hero-partners/1.svg" alt="pic">
+              <img class="hero__partners-img" loading="lazy" src="./img/hero-partners/1.svg" alt="pic">
             </a>
           </li>
 
           <li class="hero__partners-item">
             <a class="hero__partners-link" href="#" target="_blank">
-              <img class="hero__partners-img" src="./img/hero-partners/2.svg" alt="pic">
+              <img class="hero__partners-img" loading="lazy" src="./img/hero-partners/2.svg" alt="pic">
             </a>
           </li>
         </ul>
@@ -32,8 +32,14 @@
   </div>
 
   <div class="video-wrapper">
-    <video playsinline autoplay muted loop poster="./img/hero-earn.webp">
+    <video id="hero-video-desktop" class="hero-video" playsinline autoplay muted loop poster="./img/hero-earn.webp">
       <source src="./video/hero-earn.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video id="hero-video-mobile" class="hero-video hero-video--mobile" playsinline autoplay muted loop
+      poster="./img/hero-earn.webp">
+      <source src="./video/hero-earn-mobile.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
