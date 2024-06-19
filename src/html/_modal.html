@@ -1,9 +1,21 @@
 <!-- Modal -->
-<div class="modal__wrapper">
-    <div class="modal">
-        <div class="modal__close"> <img src="./img/cancel.svg" alt="cancel" width="10px" height="10px"></div>
-        <div class="modal__title"><span>Заголовок 2</span> </div>
-        <div class="modal__body">
-        </div>
+
+<button class="open-modal-btn" data-modal-id="modal1"
+  style="text-align: center; color: green; font-size: 20px;width: 100%; display: flex; justify-content: center;z-index: 10;">Open
+  Modal 1</button>
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <!-- <button class="close-modal-btn">Close Modal</button> -->
+    <div class="modal-content__main">
+      <img class="modal-content__icon" width="200" height="200" src="./img/icons/modal-icon.svg" alt="icon">
+
+      <h2 class="modal-content__title">Спасибо!</h2>
+
+      <p class="modal-content__text">
+        Ваша заявка принята.<br />
+        Наш менеджер свяжеться с вами в ближайшее время
+      </p>
     </div>
+
+  </div>
 </div>

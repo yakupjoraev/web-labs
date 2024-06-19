@@ -230,12 +230,12 @@ function projectsSlider() {
     },
     on: {
       reachEnd: function () {
-        // Разрешить скролл страницы, когда пользователь доскроллил до конца слайдера
+        // Разрешить скроллинг страницы, когда пользователь доскроллил до конца слайдера
         document.body.classList.remove('hidden');
       },
       slideChange: function () {
         if (!swiper.isEnd) {
-          // Запретить скролл страницы, когда слайдер в движении
+          // Запретить скроллинг страницы, когда слайдер в движении
           document.body.classList.add('hidden');
         }
       }
@@ -245,20 +245,32 @@ function projectsSlider() {
   const projectsSection = document.querySelector('.projects');
   let isScrolling = false;
   let hasHiddenClassBeenAdded = false;
+  let lastScrollTop = 0;
 
   window.addEventListener('scroll', function () {
     const sectionTop = projectsSection.getBoundingClientRect().top;
     const sectionBottom = projectsSection.getBoundingClientRect().bottom;
     const viewportHeight = window.innerHeight;
+    const sectionMidpoint = (sectionTop + sectionBottom) / 2;
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (!hasHiddenClassBeenAdded && sectionTop < viewportHeight / 2 && sectionBottom > viewportHeight / 2) {
-      // Если секция находится в середине экрана, заблокировать скролл страницы
-      document.body.classList.add('hidden');
-      hasHiddenClassBeenAdded = true;
-    } else if (hasHiddenClassBeenAdded && (sectionTop >= viewportHeight || sectionBottom <= 0)) {
-      // Разрешить скролл страницы, если пользователь вышел из секции проектов
-      document.body.classList.remove('hidden');
+    if (currentScrollTop > lastScrollTop) {
+      // Скролл вниз
+      if (!hasHiddenClassBeenAdded && sectionMidpoint < viewportHeight / 2 && sectionMidpoint > 0) {
+        // Если середина секции находится в середине экрана, заблокировать скроллинг страницы
+        document.body.classList.add('hidden');
+        hasHiddenClassBeenAdded = true;
+      }
+    } else {
+      // Скролл вверх
+      if (hasHiddenClassBeenAdded && (sectionBottom <= 0 || sectionTop >= viewportHeight)) {
+        // Разрешить скроллинг страницы, если пользователь вышел из секции проектов
+        document.body.classList.remove('hidden');
+        hasHiddenClassBeenAdded = false;
+      }
     }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Не позволяем lastScrollTop быть отрицательным
   });
 
   // Добавить управление слайдами при скролле
@@ -276,6 +288,7 @@ function projectsSlider() {
 }
 
 projectsSlider();
+
 
 
 
@@ -321,6 +334,35 @@ function clientsSlider() {
 
 clientsSlider();
 
+
+const openModalBtns = document.querySelectorAll('.open-modal-btn');
+const closeModalBtns = document.querySelectorAll('.close-modal-btn');
+const modals = document.querySelectorAll('.modal');
+const body = document.querySelector('body')
+
+openModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modalId = btn.dataset.modalId;
+    const modal = document.getElementById(modalId);
+    modal.classList.add('show');
+    body.classList.add('locked');
+  });
+});
+
+closeModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal');
+    modal.classList.remove('show');
+    body.classList.remove('locked');
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
+    event.target.classList.remove('show');
+    body.classList.remove('locked');
+  }
+});
 
 
 customSelect('select');
