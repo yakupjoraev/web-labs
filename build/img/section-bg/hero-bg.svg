@@ -1,25 +1,27 @@
 <svg width="1920" height="1596" viewBox="0 0 1920 1596" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2_3)">
-<g filter="url(#filter0_f_2_3)">
-<circle cx="2538.5" cy="716.5" r="716.5" fill="#00FFA3"/>
-</g>
-<g filter="url(#filter1_f_2_3)">
-<circle cx="-128.5" cy="160.5" r="386.5" fill="#00FFA3"/>
-</g>
-</g>
-<defs>
-<filter id="filter0_f_2_3" x="622" y="-1200" width="3833" height="3833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="600" result="effect1_foregroundBlur_2_3"/>
-</filter>
-<filter id="filter1_f_2_3" x="-1715" y="-1426" width="3173" height="3173" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="600" result="effect1_foregroundBlur_2_3"/>
-</filter>
-<clipPath id="clip0_2_3">
-<rect width="1920" height="1596" fill="white"/>
-</clipPath>
-</defs>
+  <g clip-path="url(#clip0_2_3)">
+    <g filter="url(#filter0_f_2_3)">
+      <circle cx="2538.5" cy="716.5" r="716.5" fill="#00FFA3" />
+    </g>
+    <g filter="url(#filter1_f_2_3)">
+      <circle cx="-128.5" cy="160.5" r="386.5" fill="#00FFA3" />
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_f_2_3" x="622" y="-1200" width="3833" height="3833" filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="600" result="effect1_foregroundBlur_2_3" />
+    </filter>
+    <filter id="filter1_f_2_3" x="-1715" y="-1426" width="3173" height="3173" filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="600" result="effect1_foregroundBlur_2_3" />
+    </filter>
+    <clipPath id="clip0_2_3">
+      <rect width="1920" height="1596" fill="white" />
+    </clipPath>
+  </defs>
 </svg>
