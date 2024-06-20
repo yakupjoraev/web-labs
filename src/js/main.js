@@ -250,6 +250,8 @@ projectsSlider();
 
 
 
+
+
 function clientsSlider() {
   const swiper = new Swiper(".clients__slider", {
     centeredSlides: true,
