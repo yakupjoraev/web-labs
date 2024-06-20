@@ -55,6 +55,30 @@ function btnAnimation() {
 
 btnAnimation();
 
+function updateVideoSource() {
+  const video = document.getElementById('hero-video');
+  const source = document.getElementById('video-source');
+  const mobileVideoSrc = './video/hero-earn-mobile.mp4';
+  const desktopVideoSrc = './video/hero-earn.mp4';
+
+  if (window.innerWidth < 767) {
+    if (source.src !== mobileVideoSrc) {
+      source.src = mobileVideoSrc;
+      video.load();  // Перезагрузить видео с новым источником
+    }
+  } else {
+    if (source.src !== desktopVideoSrc) {
+      source.src = desktopVideoSrc;
+      video.load();  // Перезагрузить видео с новым источником
+    }
+  }
+}
+
+// Начальная установка
+updateVideoSource();
+
+// Обновление при изменении размера окна
+window.addEventListener('resize', updateVideoSource);
 
 
 
@@ -63,12 +87,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.nums');
 
   if (!container) {
-    return null
+    return;
   }
 
   const counters = document.querySelectorAll('.nums__item-num');
-  const speed = 100; // Скорость анимации
+  if (counters.length === 0) {
+    return;
+  }
 
+  const speed = 100; // Скорость анимации
   const options = {
     threshold: 0.5 // Порог видимости (50%)
   };
@@ -83,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const current = parseInt(element.innerText.replace('+', ''), 10);
       if (current < target) {
         element.innerText = Math.ceil(current + increment) + (hasPlus ? '+' : '');
-        requestAnimationFrame(updateCount);
+        setTimeout(updateCount, 20); // Задержка 20мс между обновлениями
       } else {
         element.innerText = target + (hasPlus ? '+' : '');
       }
@@ -106,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(counter);
   });
 });
+
 
 function reviewsSlider() {
   const container = document.querySelector('.reviews');
@@ -212,63 +240,9 @@ function projectsSlider() {
         },
       }
     },
-    on: {
-      reachEnd: function () {
-        // Разрешить скроллинг страницы, когда пользователь доскроллил до конца слайдера
-        document.body.classList.remove('hidden');
-      },
-      slideChange: function () {
-        if (!swiper.isEnd) {
-          // Запретить скроллинг страницы, когда слайдер в движении
-          document.body.classList.add('hidden');
-        }
-      }
-    }
+
   });
 
-  const projectsSection = document.querySelector('.projects');
-  let isScrolling = false;
-  let hasHiddenClassBeenAdded = false;
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', function () {
-    const sectionTop = projectsSection.getBoundingClientRect().top;
-    const sectionBottom = projectsSection.getBoundingClientRect().bottom;
-    const viewportHeight = window.innerHeight;
-    const sectionMidpoint = (sectionTop + sectionBottom) / 2;
-    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScrollTop > lastScrollTop) {
-      // Скролл вниз
-      if (!hasHiddenClassBeenAdded && sectionMidpoint < viewportHeight / 2 && sectionMidpoint > 0) {
-        // Если середина секции находится в середине экрана, заблокировать скроллинг страницы
-        document.body.classList.add('hidden');
-        hasHiddenClassBeenAdded = true;
-      }
-    } else {
-      // Скролл вверх
-      if (hasHiddenClassBeenAdded && (sectionBottom <= 0 || sectionTop >= viewportHeight)) {
-        // Разрешить скроллинг страницы, если пользователь вышел из секции проектов
-        document.body.classList.remove('hidden');
-        hasHiddenClassBeenAdded = false;
-      }
-    }
-
-    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Не позволяем lastScrollTop быть отрицательным
-  });
-
-  // Добавить управление слайдами при скролле
-  window.addEventListener('wheel', function (e) {
-    if (document.body.classList.contains('hidden') && !isScrolling) {
-      isScrolling = true;
-      if (e.deltaY > 0) {
-        swiper.slideNext();
-      } else {
-        swiper.slidePrev();
-      }
-      setTimeout(() => { isScrolling = false; }, 600); // Задержка для завершения анимации слайда
-    }
-  });
 }
 
 projectsSlider();
@@ -317,6 +291,8 @@ function clientsSlider() {
 }
 
 clientsSlider();
+
+
 
 
 const openModalBtns = document.querySelectorAll('.open-modal-btn');

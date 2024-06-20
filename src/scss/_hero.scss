@@ -203,17 +203,3 @@
     padding-top: 400px;
   }
 }
-
-.hero-video {
-  @media (max-width: $breakpoint768) {
-    display: none;
-  }
-}
-
-.hero-video--mobile {
-  display: none;
-
-  @media (max-width: $breakpoint768) {
-    display: block;
-  }
-}
