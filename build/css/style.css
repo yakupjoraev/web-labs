@@ -308,8 +308,6 @@ body.hidden {
 }
 
 .header {
-  position: relative;
-  z-index: 10;
   background-color: transparent;
 }
 
@@ -318,6 +316,8 @@ body.hidden {
 }
 
 .navbar {
+  position: relative;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,6 +332,7 @@ body.hidden {
           column-gap: 60px;
   width: 100%;
   padding: 46px 0 20px;
+  background-color: transparent;
 }
 
 .menu {
