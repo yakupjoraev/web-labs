@@ -37,6 +37,7 @@
     height: 880px;
 
     &::before {
+      height: calc(100% + 100px);
       background-position-x: right;
     }
   }

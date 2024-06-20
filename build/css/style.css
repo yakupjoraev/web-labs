@@ -2349,6 +2349,7 @@ body.hidden {
   }
 
   .hero::before {
+    height: calc(100% + 100px);
     background-position-x: right;
   }
 
