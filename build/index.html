@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#000000">
+
   <title>Web Labs</title>
   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
   <link rel="stylesheet" href="./css/custom-select.css">
@@ -1090,7 +1098,97 @@
 </section>
     </main>
 
-    
+    <!-- Modal -->
+
+<button class="open-modal-btn" data-modal-id="modal1"
+  style="text-align: center; color: green; font-size: 20px;width: 100%; display: flex; justify-content: center;z-index: 10;">Open
+  Modal 1</button>
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <!-- <button class="close-modal-btn">Close Modal</button> -->
+    <div class="modal-content__main">
+      <img class="modal-content__icon" width="200" height="200" src="./img/icons/modal-icon.svg" alt="icon">
+
+      <h2 class="modal-content__title">Спасибо!</h2>
+
+      <p class="modal-content__text">
+        Ваша заявка принята.<br />
+        Наш менеджер свяжеться с вами в ближайшее время
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<button class="open-modal-btn" data-modal-id="modal2"
+  style="text-align: center; color: green; font-size: 20px;width: 100%; display: flex; justify-content: center;z-index: 10;">Open
+  Modal 2</button>
+<div class="modal" id="modal2">
+  <div class="modal-content">
+    <!-- <button class="close-modal-btn">Close Modal</button> -->
+    <div class="modal-content__main">
+      <div class="form__inner">
+        <div class="section-head">
+          <span class="section-title-decor">[</span>
+          <h3 class="section-title">Заказать</h3>
+          <span class="section-title-decor">]</span>
+        </div>
+
+        <form class="form__main" action="#">
+          <div class="form__rows">
+            <div class="form__group">
+              <input required="" type="text" class="form__input">
+              <label class="form__label">Имя</label>
+            </div>
+
+            <div class="form__group">
+              <input required="" type="text" class="form__input">
+              <label class="form__label">Компания</label>
+            </div>
+
+            <div class="form__group">
+              <input required="" type="email" class="form__input">
+              <label class="form__label">E-mail</label>
+            </div>
+
+            <div class="form__group">
+              <input required="" type="tel" class="form__input">
+              <label class="form__label">Телефон</label>
+            </div>
+
+            <div class="form__group">
+              <input required="" type="text" class="form__input">
+              <label class="form__label">Telegram</label>
+            </div>
+
+            <div class="form__group">
+              <select class="form__select" id="select">
+                <option>Выберите услугу</option>
+                <option value="услуга 1">услуга 1</option>
+                <option value="услуга 2">услуга 2</option>
+                <option value="услуга 3">услуга 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <textarea class="form__input form__input--textarea" placeholder="Опишите проект"></textarea>
+            <!-- <label class="form__label">Опишите проект</label> -->
+          </div>
+
+          <button type="submit" class="form__btn btn">
+            <span>Отправить</span>
+
+            <div class="btn__arrow">
+              <img class="btn__arrow-icon" width="32" height="32" src="./img/icons/btn-arrow.svg" alt="arrow icon">
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
     <!-- Footer -->
     <footer class="footer">
   <div class="container footer-container">

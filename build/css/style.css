@@ -1406,6 +1406,10 @@ body.hidden {
   margin-top: -100px;
 }
 
+.form__inner {
+  width: 100%;
+}
+
 .form__main {
   max-width: 1280px;
   margin: 0 auto;
@@ -2351,6 +2355,7 @@ body.hidden {
   .hero::before {
     height: calc(100% + 100px);
     background-position-x: right;
+    background-size: 100% 100%;
   }
 
   .hero__title {
