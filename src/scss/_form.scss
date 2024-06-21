@@ -19,6 +19,14 @@
   color: var(--white);
   transition: 0.2s linear;
 
+  &.error {
+    border-color: red;
+
+    &~.form__label {
+      color: red;
+    }
+  }
+
   @media (hover:hover) {
     &:hover {
       border-color: var(--green);
@@ -125,6 +133,7 @@
 
   &__select {
     outline: 0;
+
   }
 
   // .form__input--textarea
@@ -222,4 +231,16 @@
 .custom-select-option.has-focus {
   background-color: #404040;
   color: var(--green);
+}
+
+.custom-select-opener:has(~.form__select.error) {
+  border-color: red;
+
+  span {
+    color: red;
+  }
+
+  &::before {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(72%) saturate(7488%) hue-rotate(355deg) brightness(96%) contrast(98%);
+  }
 }

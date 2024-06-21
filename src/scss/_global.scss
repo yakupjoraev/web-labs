@@ -44,10 +44,6 @@ body {
   &.hidden {
     overflow: hidden;
 
-    @media (max-width: $breakpoint768) {
-      overflow: auto;
-    }
-
   }
 }
 

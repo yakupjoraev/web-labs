@@ -1362,6 +1362,14 @@ body.hidden {
   transition: 0.2s linear;
 }
 
+.form__input.error {
+  border-color: red;
+}
+
+.form__input.error ~ .form__label {
+  color: red;
+}
+
 .form__input:active,
 .form__input:focus {
   border-color: var(--green);
@@ -1506,6 +1514,19 @@ body.hidden {
 .custom-select-option.has-focus {
   background-color: #404040;
   color: var(--green);
+}
+
+.custom-select-opener:has(~ .form__select.error) {
+  border-color: red;
+}
+
+.custom-select-opener:has(~ .form__select.error) span {
+  color: red;
+}
+
+.custom-select-opener:has(~ .form__select.error)::before {
+  -webkit-filter: brightness(0) saturate(100%) invert(20%) sepia(72%) saturate(7488%) hue-rotate(355deg) brightness(96%) contrast(98%);
+          filter: brightness(0) saturate(100%) invert(20%) sepia(72%) saturate(7488%) hue-rotate(355deg) brightness(96%) contrast(98%);
 }
 
 .footer {
@@ -1818,6 +1839,10 @@ body.hidden {
   right: 10px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.open-modal-btn {
   cursor: pointer;
 }
 
@@ -2327,10 +2352,6 @@ body.hidden {
     max-width: 740px;
   }
 
-  body.hidden {
-    overflow: auto;
-  }
-
   .section-bottom {
     padding-top: 40px;
   }
@@ -2355,7 +2376,6 @@ body.hidden {
   .hero::before {
     height: calc(100% + 100px);
     background-position-x: right;
-    background-size: 100% 100%;
   }
 
   .hero__title {

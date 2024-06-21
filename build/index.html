@@ -84,13 +84,13 @@
 
 
           <li class="menu__item menu__item-btn">
-            <a href="#" class="menu__item-btn-link btn">
+            <div class="menu__item-btn-link btn open-modal-btn" data-modal-id="modal2">
               <span>Заказать</span>
 
               <div class="btn__arrow">
                 <img class="btn__arrow-icon" width="14" height="12" src="./img/icons/btn-arrow.svg" alt="arrow icon">
               </div>
-            </a>
+            </div>
           </li>
         </ul>
         <div class="burger">
@@ -958,7 +958,6 @@
           <div class="clients__slide swiper-slide"><img src="./img/clients/62.png" alt="pic"></div>
           <div class="clients__slide swiper-slide"><img src="./img/clients/63.png" alt="pic"></div>
           <div class="clients__slide swiper-slide"><img src="./img/clients/66.png" alt="pic"></div>
-          <div class="clients__slide swiper-slide"><img src="./img/clients/67.png" alt="pic"></div>
           <div class="clients__slide swiper-slide"><img src="./img/clients/68.png" alt="pic"></div>
           <div class="clients__slide swiper-slide"><img src="./img/clients/69.png" alt="pic"></div>
           <div class="clients__slide swiper-slide"><img src="./img/clients/70.png" alt="pic"></div>
@@ -1046,33 +1045,33 @@
       <form class="form__main" action="#">
         <div class="form__rows">
           <div class="form__group">
-            <input required="" type="text" class="form__input">
+            <input required="" type="text" class="form__input js-input">
             <label class="form__label">Имя</label>
           </div>
 
           <div class="form__group">
-            <input required="" type="text" class="form__input">
+            <input required="" type="text" class="form__input js-input">
             <label class="form__label">Компания</label>
           </div>
 
           <div class="form__group">
-            <input required="" type="email" class="form__input">
+            <input required="" type="email" class="form__input js-input js-input-email">
             <label class="form__label">E-mail</label>
           </div>
 
           <div class="form__group">
-            <input required="" type="tel" class="form__input">
+            <input required="" type="tel" placeholder="" data-mask-input class="form__input js-input js-input-phone">
             <label class="form__label">Телефон</label>
           </div>
 
           <div class="form__group">
-            <input required="" type="text" class="form__input">
+            <input required="" type="text" class="form__input js-input">
             <label class="form__label">Telegram</label>
           </div>
 
           <div class="form__group">
-            <select class="form__select" id="select">
-              <option>Выберите услугу</option>
+            <select class="form__select js-input" id="select">
+              <option value="">Выберите услугу</option>
               <option value="услуга 1">услуга 1</option>
               <option value="услуга 2">услуга 2</option>
               <option value="услуга 3">услуга 3</option>
@@ -1100,10 +1099,10 @@
 
     <!-- Modal -->
 
-<button class="open-modal-btn" data-modal-id="modal1"
+<!-- <button class="open-modal-btn" data-modal-id="modal1"
   style="text-align: center; color: green; font-size: 20px;width: 100%; display: flex; justify-content: center;z-index: 10;">Open
-  Modal 1</button>
-<div class="modal" id="modal1">
+  Modal 1</button> -->
+<div class="modal modal-complete" id="modal1">
   <div class="modal-content">
     <!-- <button class="close-modal-btn">Close Modal</button> -->
     <div class="modal-content__main">
@@ -1120,9 +1119,9 @@
   </div>
 </div>
 
-<button class="open-modal-btn" data-modal-id="modal2"
+<!-- <button class="open-modal-btn" data-modal-id="modal2"
   style="text-align: center; color: green; font-size: 20px;width: 100%; display: flex; justify-content: center;z-index: 10;">Open
-  Modal 2</button>
+  Modal 2</button> -->
 <div class="modal" id="modal2">
   <div class="modal-content">
     <!-- <button class="close-modal-btn">Close Modal</button> -->
@@ -1137,33 +1136,33 @@
         <form class="form__main" action="#">
           <div class="form__rows">
             <div class="form__group">
-              <input required="" type="text" class="form__input">
+              <input required="" type="text" class="form__input js-input">
               <label class="form__label">Имя</label>
             </div>
 
             <div class="form__group">
-              <input required="" type="text" class="form__input">
+              <input required="" type="text" class="form__input js-input">
               <label class="form__label">Компания</label>
             </div>
 
             <div class="form__group">
-              <input required="" type="email" class="form__input">
+              <input required="" type="email" class="form__input js-input js-input-email">
               <label class="form__label">E-mail</label>
             </div>
 
             <div class="form__group">
-              <input required="" type="tel" class="form__input">
+              <input required="" type="tel" placeholder="" data-mask-input class="form__input js-input js-input-phone">
               <label class="form__label">Телефон</label>
             </div>
 
             <div class="form__group">
-              <input required="" type="text" class="form__input">
+              <input required="" type="text" class="form__input js-input">
               <label class="form__label">Telegram</label>
             </div>
 
             <div class="form__group">
-              <select class="form__select" id="select">
-                <option>Выберите услугу</option>
+              <select class="form__select js-input" id="select2">
+                <option value="">Выберите услугу</option>
                 <option value="услуга 1">услуга 1</option>
                 <option value="услуга 2">услуга 2</option>
                 <option value="услуга 3">услуга 3</option>
@@ -1273,6 +1272,7 @@
 </body>
 
 <script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/imask.js"></script>
 <script src="./js/custom-select.min.js"></script>
 <script src="./js/scripts.min.js"></script>
 

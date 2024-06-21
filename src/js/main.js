@@ -10,11 +10,11 @@ function burgerMenu() {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
       burger.classList.add('active-burger');
-      body.classList.add('locked');
+      body.classList.add('hidden');
     } else {
       menu.classList.remove('active');
       burger.classList.remove('active-burger');
-      body.classList.remove('locked');
+      body.classList.remove('hidden');
     }
   });
 
@@ -28,12 +28,12 @@ function burgerMenu() {
         setTimeout(() => {
           menu.classList.remove('active');
           burger.classList.remove('active-burger');
-          body.classList.remove('locked');
+          body.classList.remove('hidden');
         }, 800);
       } else {
         menu.classList.remove('active');
         burger.classList.remove('active-burger');
-        body.classList.remove('locked');
+        body.classList.remove('hidden');
       }
     });
   });
@@ -306,13 +306,145 @@ function clientsSlider() {
 
 clientsSlider();
 
+function dateInputs() {
+  // Получаем все элементы с атрибутом data-date-input
+  const dateInputs = document.querySelectorAll('[data-mask-input]');
+
+  if (!dateInputs) {
+    return null
+  }
+
+  // Проходимся по каждому элементу и создаем для него экземпляр IMask
+  dateInputs.forEach(dateInput => {
+    IMask(dateInput, {
+      mask: "+{7}(000)000-00-00",
+    });
+  });
+
+}
+dateInputs();
 
 
+// validate////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function validateForm() {
+  let forms = document.querySelectorAll('.form__main');
+
+  forms.forEach(form => {
+    form.setAttribute('novalidate', true); // Disable native form validation
+
+    let formInputs = form.querySelectorAll('.js-input');
+    const inputEmail = form.querySelector('.js-input-email');
+    const inputPhone = form.querySelector('.js-input-phone');
+
+    function validateEmail(email) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    function validatePhone(phone) {
+      let re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+      return re.test(String(phone));
+    }
+
+    form.onsubmit = function (event) {
+      event.preventDefault();  // Prevent the default form submission
+
+      let emailVal = inputEmail.value,
+        phoneVal = inputPhone.value,
+        isValid = true;
+
+      formInputs.forEach(function (input) {
+        if (input.value === '') {
+          input.classList.add('error');
+          console.log('input not filled');
+          isValid = false;
+        } else {
+          input.classList.remove('error');
+        }
+      });
+
+      form.querySelectorAll('.form__select').forEach(function (select) {
+        if (select.value === '' || select.value === 'Выберите услугу') {
+          select.classList.add('error');
+          console.log('select not valid');
+          isValid = false;
+        } else {
+          select.classList.remove('error');
+        }
+      });
+
+      if (!validateEmail(emailVal)) {
+        console.log('email not valid');
+        inputEmail.classList.add('error');
+        isValid = false;
+      } else {
+        inputEmail.classList.remove('error');
+      }
+
+      if (!validatePhone(phoneVal)) {
+        console.log('phone not valid');
+        inputPhone.classList.add('error');
+        isValid = false;
+      } else {
+        inputPhone.classList.remove('error');
+      }
+
+      if (isValid) {
+        // Send form data to the server using AJAX
+        const formData = new FormData(form);
+        fetch('mail.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.text())
+          .then(data => {
+            console.log('Success:', data);
+
+            // Clear form fields
+            formInputs.forEach(input => {
+              input.value = '';
+            });
+
+            form.querySelectorAll('.form__select').forEach(select => {
+              select.value = '';
+            });
+
+            // Hide all modals
+            document.querySelectorAll('.modal').forEach(modal => {
+              modal.classList.remove('show');
+            });
+
+            // Show the complete modal
+            const completeModal = document.querySelector('.modal-complete');
+            completeModal.classList.add('show');
+            document.body.classList.add('locked');
+
+            // Hide the complete modal after 3 seconds
+            setTimeout(() => {
+              completeModal.classList.remove('show');
+
+              // Check if any modals are still open
+              if (!document.querySelector('.modal.show')) {
+                document.body.classList.remove('locked');
+              }
+            }, 3000);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      } else {
+        console.log('form not valid');
+      }
+    };
+  });
+}
+
+validateForm();
 const openModalBtns = document.querySelectorAll('.open-modal-btn');
 const closeModalBtns = document.querySelectorAll('.close-modal-btn');
 const modals = document.querySelectorAll('.modal');
-const body = document.querySelector('body')
+const body = document.querySelector('body');
 
 openModalBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -327,16 +459,25 @@ closeModalBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const modal = btn.closest('.modal');
     modal.classList.remove('show');
-    body.classList.remove('locked');
+
+    // Check if any modals are still open
+    if (!document.querySelector('.modal.show')) {
+      body.classList.remove('locked');
+    }
   });
 });
 
 window.addEventListener('click', (event) => {
   if (event.target.classList.contains('modal')) {
     event.target.classList.remove('show');
-    body.classList.remove('locked');
+
+    // Check if any modals are still open
+    if (!document.querySelector('.modal.show')) {
+      body.classList.remove('locked');
+    }
   }
 });
+
 
 
 customSelect('select');
