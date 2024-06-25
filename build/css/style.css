@@ -861,14 +861,17 @@ body.hidden {
   padding: 40px;
   background: var(--gray);
   overflow: hidden;
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 .tehno__item:before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: 60px;
-  left: 60px;
+  top: 80px;
+  left: 80px;
   background: var(--green);
   height: 32px;
   width: 32px;
@@ -879,11 +882,11 @@ body.hidden {
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  -o-transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 .tehno__item-head {
@@ -896,6 +899,9 @@ body.hidden {
           flex-direction: column;
   row-gap: 20px;
   margin-bottom: 32px;
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 .tehno__item-icon {
@@ -980,8 +986,8 @@ body.hidden {
   content: "";
   position: absolute;
   z-index: -1;
-  bottom: 60px;
-  left: 60px;
+  bottom: -10px;
+  left: -10px;
   background: var(--green);
   height: 32px;
   width: 32px;
@@ -992,11 +998,11 @@ body.hidden {
   -webkit-transform-origin: 50% 50%;
       -ms-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  transition: -webkit-transform 0.4s ease-out;
-  -o-transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  -o-transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 .benefits__item:empty {
@@ -1017,6 +1023,12 @@ body.hidden {
           flex-direction: column;
   row-gap: 20px;
   margin-bottom: 20px;
+}
+
+.benefits__item-icon {
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 .benefits__item-label {
@@ -1089,16 +1101,24 @@ body.hidden {
   -webkit-transition: 0.3s linear;
   -o-transition: 0.3s linear;
   transition: 0.3s linear;
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
 }
 
 .reviews__slide.swiper-slide-prev {
-  rotate: -32deg;
+  rotate: -10deg 0 !important;
+  translate: -50px 50px;
   opacity: 0.2;
 }
 
 .reviews__slide.swiper-slide-next {
-  rotate: 32deg;
+  rotate: 10deg 0 !important;
+  translate: 50px 50px;
   opacity: 0.2;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .reviews__slide-head {
@@ -1208,9 +1228,18 @@ body.hidden {
   letter-spacing: -0.03em;
   text-align: center;
   color: var(--white);
+  opacity: 0;
   -webkit-transition: 0.2s linear;
   -o-transition: 0.2s linear;
   transition: 0.2s linear;
+}
+
+.reviews__slider-arrow.active {
+  opacity: 1;
+}
+
+.reviews__slider-arrow:hover {
+  opacity: 1;
 }
 
 .reviews__slider-arrow.swiper-button-disabled {
@@ -1223,6 +1252,7 @@ body.hidden {
 }
 
 .reviews__slider-arrow--prev {
+  top: 70%;
   left: calc(50% - 360px);
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -1275,6 +1305,12 @@ body.hidden {
   padding-bottom: 40px;
 }
 
+.clients__slider-wrapper {
+  -webkit-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
 .clients__slide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1291,11 +1327,16 @@ body.hidden {
   height: 125px;
 }
 
-.clients__controller {
-  margin-top: 80px;
+.clients__slide img {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .clients__scrollbar {
+  display: none;
   max-width: 1020px;
   margin: 0 auto;
   margin-top: 40px;
@@ -2151,6 +2192,11 @@ body.hidden {
     right: -48px;
   }
 
+  .clients__slide img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+  }
+
   .form {
     border-radius: 40px 40px 0 0;
   }
@@ -2540,6 +2586,7 @@ body.hidden {
         -ms-transform: none !important;
             transform: none !important;
     rotate: none !important;
+    translate: none !important;
     opacity: 1;
   }
 
@@ -2548,6 +2595,7 @@ body.hidden {
         -ms-transform: none !important;
             transform: none !important;
     rotate: none !important;
+    translate: none !important;
     opacity: 1;
   }
 
@@ -2578,6 +2626,7 @@ body.hidden {
   }
 
   .reviews__slider-arrow {
+    opacity: 1;
     width: 120px;
     height: 40px;
     font-size: 0;
@@ -2651,9 +2700,7 @@ body.hidden {
   }
 
   .clients__controller {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2810,6 +2857,15 @@ body.hidden {
             transform: scale(40);
   }
 
+  .tehno__item:hover {
+    padding-bottom: 18px;
+    margin-bottom: -18px;
+  }
+
+  .tehno__item:hover .tehno__item-head {
+    margin-bottom: 50px;
+  }
+
   .tehno__item:hover .tehno__item-icon {
     -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(107%) contrast(104%);
             filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(107%) contrast(104%);
@@ -2828,6 +2884,19 @@ body.hidden {
 
   .benefits__item:hover .benefits__item-text {
     color: var(--white);
+  }
+
+  .reviews__slide.swiper-slide-prev:hover .reviews__slider-arrow {
+    opacity: 1;
+  }
+
+  .reviews__slide.swiper-slide-next:hover ~ .reviews__slider-controller .reviews__slider-arrow {
+    opacity: 1;
+  }
+
+  .clients__slide:hover img {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
   }
 
   .form__input:hover {

@@ -201,6 +201,68 @@ function reviewsSlider() {
 
 reviewsSlider();
 
+function reviewsHoverBtns() {
+  const container = document.querySelector('.reviews');
+
+  if (!container) {
+    return null;
+  }
+
+  let arrows = container.querySelectorAll('.reviews__slider-arrow');
+
+  function addHoverListeners() {
+    // let nextSlide = document.querySelector('.swiper-slide-next');
+    // let prevSlide = document.querySelector('.swiper-slide-prev');
+    let mainSlides = document.querySelectorAll('.swiper-slide');
+
+    if (mainSlides) {
+      mainSlides.forEach(mainSlide => {
+        mainSlide.addEventListener('mouseenter', () => {
+          arrows.forEach(arrow => {
+            arrow.classList.add('active');
+          });
+        });
+
+        mainSlide.addEventListener('mouseleave', () => {
+          arrows.forEach(arrow => {
+            arrow.classList.remove('active');
+          });
+        });
+      });
+
+    }
+
+    // if (prevSlide) {
+    //   prevSlide.addEventListener('mouseenter', () => {
+    //     arrows.forEach(arrow => {
+    //       arrow.classList.add('active');
+    //     });
+    //   });
+
+    //   prevSlide.addEventListener('mouseleave', () => {
+    //     arrows.forEach(arrow => {
+    //       arrow.classList.remove('active');
+    //     });
+    //   });
+    // }
+  }
+
+  // Use MutationObserver to watch for changes in the DOM
+  const observer = new MutationObserver(() => {
+    addHoverListeners();
+  });
+
+  observer.observe(container, { childList: true, subtree: true });
+
+  // Initial call to add listeners if elements are already in the DOM
+  addHoverListeners();
+}
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+  reviewsHoverBtns();
+}
+
+
 
 
 function projectsSlider() {
@@ -264,11 +326,17 @@ projectsSlider();
 
 
 
+
 function clientsSlider() {
   const swiper = new Swiper(".clients__slider", {
     centeredSlides: true,
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 0,
+    },
+    speed: 3000,
     navigation: {
       nextEl: ".clients__arrow--next",
       prevEl: ".clients__arrow--prev",
@@ -284,20 +352,25 @@ function clientsSlider() {
     breakpoints: {
       320: {
         centeredSlides: true,
-        slidesPerView: 1,
+        slidesPerView: 1.5,
       },
       767: {
+        loop: true,
+        autoplay: {
+          delay: 0,
+        },
+        speed: 3000,
         spaceBetween: 20,
         grabCursor: true,
         centeredSlides: false,
         slidesPerView: 6,
         direction: "horizontal",
-        scrollbar: {
-          el: '.clients__scrollbar',
-          draggable: true,
-          snapOnRelease: true,
-          dragSize: 'auto',
-        },
+        // scrollbar: {
+        //   el: '.clients__scrollbar',
+        //   draggable: true,
+        //   snapOnRelease: true,
+        //   dragSize: 'auto',
+        // },
       }
     },
   });

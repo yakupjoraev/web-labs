@@ -38,7 +38,7 @@ try {
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('webdevtower@gmail.com', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('webdeveloper@yacubedevelop.fun', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
   $mail->addAddress('webdevtower@gmail.com');

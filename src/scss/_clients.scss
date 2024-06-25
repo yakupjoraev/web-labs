@@ -21,7 +21,9 @@
 
   // .clients__slider-wrapper
 
-  &__slider-wrapper {}
+  &__slider-wrapper {
+    transition-timing-function: linear;
+  }
 
   // .clients__slide
 
@@ -33,15 +35,35 @@
     background-repeat: no-repeat;
     background-position: top left;
     height: 125px;
+
+    @media (hover:hover) {
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+
+    img {
+      filter: grayscale(1);
+      transition: 0.2s linear;
+    }
+
+    @media (max-width: $breakpoint992) {
+      img {
+        filter: grayscale(0);
+      }
+    }
   }
 
   // .clients__controller
 
   &__controller {
-    margin-top: 80px;
+    // margin-top: 80px;
 
     @media (max-width: $breakpoint768) {
-      display: flex;
+      // display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       column-gap: 10px;
@@ -98,6 +120,7 @@
   // .clients__scrollbar
 
   &__scrollbar {
+    display: none;
     max-width: 1020px;
     margin: 0 auto;
     margin-top: 40px;
