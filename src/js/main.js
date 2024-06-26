@@ -319,9 +319,11 @@ function projectsSlider() {
 
 }
 
-projectsSlider();
 
 
+if (window.matchMedia("(max-width: 767px)").matches) {
+  projectsSlider();
+}
 
 
 
@@ -551,6 +553,6 @@ window.addEventListener('click', (event) => {
   }
 });
 
-
+AOS.init();
 
 customSelect('select');

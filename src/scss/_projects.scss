@@ -27,12 +27,25 @@
   // .projects__list
 
   &__list {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
     transition: 0.2s linear;
 
     counter-reset: item;
     list-style-type: none;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint768) {
+      display: flex;
+      align-items: center;
+      column-gap: 0;
+      row-gap: 0;
+    }
   }
 
   // .projects__item
@@ -48,6 +61,13 @@
     padding: 40px;
     background-color: var(--gray);
 
+    @media (max-width: 1200px) {
+      min-height: 400px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      min-height: 470px;
+    }
 
     &::before {
       position: absolute;
