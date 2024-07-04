@@ -51,11 +51,21 @@
 
 .close-modal-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  top: 18px;
+  right: 14px;
+  display: none;
   cursor: pointer;
+
+  @media (max-width: $breakpoint768) {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Cpath d='M23.9554 21.1102L36.1024 8.95317C36.8928 8.16239 36.8928 6.88377 36.1024 6.09309C35.3122 5.3023 34.0346 5.3023 33.2446 6.09309L21.0974 18.2501L8.95063 6.09309C8.16012 5.3023 6.88302 5.3023 6.09288 6.09309C5.30237 6.88387 5.30237 8.16239 6.09288 8.95317L18.2395 21.1102L6.09298 33.2672C5.30247 34.058 5.30247 35.3366 6.09298 36.1273C6.2804 36.3154 6.50312 36.4646 6.74833 36.5663C6.99354 36.668 7.25642 36.7202 7.52185 36.7199C8.03913 36.7199 8.55661 36.5217 8.95073 36.1273L21.0974 23.9703L33.2446 36.1273C33.4321 36.3154 33.6548 36.4645 33.9 36.5662C34.1452 36.6679 34.4081 36.7201 34.6735 36.7199C35.1908 36.7199 35.7082 36.5217 36.1024 36.1273C36.8928 35.3365 36.8928 34.058 36.1024 33.2672L23.9554 21.1102Z' fill='white' /%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+  }
 }
 
 .open-modal-btn {

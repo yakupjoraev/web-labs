@@ -7,7 +7,24 @@
 
 // Navbar
 .nav {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: transparent;
+  transition: 0.2s linear;
+
+  &.fixed__nav {
+    background: rgba(0, 22, 14, 0.95);
+
+    .navbar {
+      padding: 16px 0;
+    }
+  }
+
+
 }
 
 .navbar {
@@ -20,6 +37,7 @@
   width: 100%;
   padding: 46px 0 20px;
   background-color: transparent;
+  transition: 0.2s linear;
 
   @media (max-width: 1550px) {
     column-gap: 40px;
@@ -233,23 +251,27 @@
     position: fixed;
     background: transparent;
     left: 0;
-    top: -100%;
+    top: -100vh;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     user-select: none;
     pointer-events: none;
     transition: 0.3s linear;
 
     &.active {
-      display: flex;
+      // display: flex;
       left: 0;
       top: 0;
       height: 100vh;
       width: 100vw;
-      flex-direction: column;
+      // flex-direction: column;
       pointer-events: all;
-      justify-content: flex-start;
-      align-items: center;
+      // justify-content: flex-start;
+      // align-items: center;
       background: #000;
       padding: 100px 20px 40px;
       z-index: 22;
@@ -302,4 +324,95 @@
       height: 32px;
     }
   }
+}
+
+@media (max-width: 359px) {
+  .menu__item-link {
+    font-size: 20px;
+  }
+
+  .menu__item-btn .btn {}
+}
+
+.burger {
+  display: none;
+
+  @media screen and (max-width: 991.98px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 14px;
+    width: 122px;
+    height: 40px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    transition: 0.3s linear;
+
+    &.active-burger {
+      background: var(--green);
+
+      .burger__lines span {
+
+        opacity: 0;
+      }
+
+      .burger__lines::before {
+        top: 4px;
+        width: 16px;
+        transform: rotate(45deg);
+      }
+
+      .burger__lines::after {
+        bottom: 6px;
+        width: 16px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.burger__lines {
+  position: relative;
+  width: 16px;
+  height: 12px;
+
+  &::before,
+  &::after,
+  span {
+    position: absolute;
+    height: 2px;
+    width: 16px;
+    background-color: var(--white);
+    transition: 0.3s linear;
+  }
+
+  &::before {
+    content: '';
+    top: 0;
+    right: 0;
+    width: 10px;
+  }
+
+  &::after {
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 10px;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+.burger__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: var(--white);
 }
