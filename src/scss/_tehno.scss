@@ -60,6 +60,10 @@
         .tehno__item-head {
           margin-bottom: 50px;
         }
+
+        .tehno__subitem {
+          background: #2e794e;
+        }
       }
 
       &:hover {
@@ -134,6 +138,7 @@
     padding: 12px 24px;
     border-radius: 500px;
     background-color: #242424;
+    transition: 0.3s linear;
   }
 
   // .tehno__subitem-icon

@@ -1,13 +1,13 @@
 .reviews {
-  padding: 120px 0;
+  margin: 120px 0;
   overflow: hidden;
 
   @media (max-width: $breakpoint992) {
-    padding: 80px 0;
+    margin: 80px 0;
   }
 
   @media (max-width: $breakpoint768) {
-    padding: 40px 0;
+    margin: 40px 0;
   }
 
   // .reviews__inner

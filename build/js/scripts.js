@@ -570,6 +570,34 @@ window.addEventListener('click', (event) => {
   }
 });
 
+
+
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const blockID = anchor.getAttribute('href').substr(1)
+    const element = document.getElementById(blockID)
+
+    // Determine the offset based on the device type
+    const isMobile = window.innerWidth <= 768
+    const offset = isMobile ? 100 : 140
+
+    // Calculate the position to scroll to with the offset
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - offset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    })
+  })
+}
+
+
 AOS.init();
 
 customSelect('select');

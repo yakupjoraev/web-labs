@@ -811,6 +811,20 @@ body.hidden {
   color: var(--white);
 }
 
+.projects__item-subtext {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.6s linear;
+  -o-transition: 0.6s linear;
+  transition: 0.6s linear;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: #959595;
+}
+
 .projects__scrollbar {
   max-width: 1020px;
   margin: 0 auto;
@@ -1020,6 +1034,9 @@ body.hidden {
   padding: 12px 24px;
   border-radius: 500px;
   background-color: #242424;
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 .tehno__subitem-text {
@@ -1155,7 +1172,7 @@ body.hidden {
 }
 
 .reviews {
-  padding: 120px 0;
+  margin: 120px 0;
   overflow: hidden;
 }
 
@@ -2262,7 +2279,7 @@ body.hidden {
   }
 
   .reviews {
-    padding: 80px 0;
+    margin: 80px 0;
   }
 
   .reviews__slider-arrow {
@@ -2277,11 +2294,6 @@ body.hidden {
 
   .reviews__slider-arrow--next {
     right: -48px;
-  }
-
-  .clients__slide img {
-    -webkit-filter: grayscale(0);
-            filter: grayscale(0);
   }
 
   .form {
@@ -2733,7 +2745,7 @@ body.hidden {
   }
 
   .reviews {
-    padding: 40px 0;
+    margin: 40px 0;
   }
 
   .reviews__slide.swiper-slide-prev {
@@ -3023,6 +3035,10 @@ body.hidden {
     background: rgba(87, 175, 125, 0.8);
   }
 
+  .projects__item:hover .projects__item-subtext {
+    max-height: 200px;
+  }
+
   .tehno__item:hover:before {
     -webkit-transform: scale(40);
         -ms-transform: scale(40);
@@ -3036,6 +3052,10 @@ body.hidden {
 
   .tehno__item:hover .tehno__item-head {
     margin-bottom: 50px;
+  }
+
+  .tehno__item:hover .tehno__subitem {
+    background: #2e794e;
   }
 
   .tehno__item:hover .tehno__item-icon {

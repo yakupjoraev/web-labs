@@ -84,6 +84,14 @@
       color: #7c7c7c;
     }
 
+    @media (hover:hover) {
+      &:hover {
+        .projects__item-subtext {
+          max-height: 200px;
+        }
+      }
+    }
+
     @media (max-width: $breakpoint768) {
       min-height: 400px;
     }
@@ -125,6 +133,20 @@
     @media (max-width: $breakpoint768) {
       font-size: 22px;
     }
+  }
+
+  // .projects__item-subtext
+
+  &__item-subtext {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s linear;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.03em;
+    color: #959595;
   }
 
   &__controller {
