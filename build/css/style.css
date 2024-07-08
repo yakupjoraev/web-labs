@@ -777,6 +777,9 @@ body.hidden {
   border-radius: 20px;
   padding: 40px;
   background-color: var(--gray);
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
 }
 
 .projects__item::before {
@@ -814,9 +817,9 @@ body.hidden {
 .projects__item-subtext {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: 0.6s linear;
-  -o-transition: 0.6s linear;
-  transition: 0.6s linear;
+  -webkit-transition: 0.6s ease-out;
+  -o-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
@@ -3033,6 +3036,10 @@ body.hidden {
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
     background: rgba(87, 175, 125, 0.8);
+  }
+
+  .projects__item:hover {
+    background-color: #1f1f1f;
   }
 
   .projects__item:hover .projects__item-subtext {

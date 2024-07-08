@@ -101,11 +101,22 @@ function updateVideoSource() {
   }
 }
 
+// Дебаунс функция
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this, args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
+
 // Начальная установка
 updateVideoSource();
 
-// Обновление при изменении размера окна
-window.addEventListener('resize', updateVideoSource);
+// Обновление при изменении размера окна с дебаунсингом
+window.addEventListener('resize', debounce(updateVideoSource, 200));
+
 
 
 
