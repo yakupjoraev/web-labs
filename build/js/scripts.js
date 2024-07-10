@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  const speed = 100; // Скорость анимации
+  const speed = 60; // Скорость анимации
   const options = {
     threshold: 0.5 // Порог видимости (50%)
   };
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const current = parseInt(element.innerText.replace('+', ''), 10);
       if (current < target) {
         element.innerText = Math.ceil(current + increment) + (hasPlus ? '+' : '');
-        setTimeout(updateCount, 20); // Задержка 20мс между обновлениями
+        setTimeout(updateCount, 10); // Задержка 20мс между обновлениями
       } else {
         element.innerText = target + (hasPlus ? '+' : '');
       }
