@@ -205,3 +205,18 @@
     padding-top: 480px;
   }
 }
+
+.video-desktop {
+
+  @media (max-width: $breakpoint768) {
+    display: none;
+  }
+}
+
+.video-mobile {
+  display: none;
+
+  @media (max-width: $breakpoint768) {
+    display: block;
+  }
+}

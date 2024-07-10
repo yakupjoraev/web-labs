@@ -664,6 +664,10 @@ body.hidden {
      object-fit: cover;
 }
 
+.video-mobile {
+  display: none;
+}
+
 .nums {
   position: relative;
   z-index: 1;
@@ -2593,6 +2597,14 @@ body.hidden {
 
   .video-wrapper {
     padding-top: 480px;
+  }
+
+  .video-desktop {
+    display: none;
+  }
+
+  .video-mobile {
+    display: block;
   }
 
   .nums {
