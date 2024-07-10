@@ -82,40 +82,40 @@ function btnAnimation() {
 
 btnAnimation();
 
-function updateVideoSource() {
-  const video = document.getElementById('hero-video');
-  const source = document.getElementById('video-source');
-  const mobileVideoSrc = './video/hero-earn-mobile.mp4';
-  const desktopVideoSrc = './video/hero-earn.mp4';
+// function updateVideoSource() {
+//   const video = document.getElementById('hero-video');
+//   const source = document.getElementById('video-source');
+//   const mobileVideoSrc = './video/hero-earn-mobile.mp4';
+//   const desktopVideoSrc = './video/hero-earn.mp4';
 
-  if (window.innerWidth < 767) {
-    if (source.src !== mobileVideoSrc) {
-      source.src = mobileVideoSrc;
-      video.load();  // Перезагрузить видео с новым источником
-    }
-  } else {
-    if (source.src !== desktopVideoSrc) {
-      source.src = desktopVideoSrc;
-      video.load();  // Перезагрузить видео с новым источником
-    }
-  }
-}
+//   if (window.innerWidth < 767) {
+//     if (source.src !== mobileVideoSrc) {
+//       source.src = mobileVideoSrc;
+//       video.load();  // Перезагрузить видео с новым источником
+//     }
+//   } else {
+//     if (source.src !== desktopVideoSrc) {
+//       source.src = desktopVideoSrc;
+//       video.load();  // Перезагрузить видео с новым источником
+//     }
+//   }
+// }
 
-// Дебаунс функция
-function debounce(func, wait) {
-  let timeout;
-  return function () {
-    const context = this, args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(context, args), wait);
-  };
-}
+// // Дебаунс функция
+// function debounce(func, wait) {
+//   let timeout;
+//   return function () {
+//     const context = this, args = arguments;
+//     clearTimeout(timeout);
+//     timeout = setTimeout(() => func.apply(context, args), wait);
+//   };
+// }
 
-// Начальная установка
-updateVideoSource();
+// // Начальная установка
+// updateVideoSource();
 
-// Обновление при изменении размера окна с дебаунсингом
-window.addEventListener('resize', debounce(updateVideoSource, 200));
+// // Обновление при изменении размера окна с дебаунсингом
+// window.addEventListener('resize', debounce(updateVideoSource, 200));
 
 
 
