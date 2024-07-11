@@ -784,6 +784,9 @@ body.hidden {
   -webkit-transition: background-color 0.4s linear;
   -o-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear;
+  -webkit-transition: all 0.4s ease !important;
+  -o-transition: all 0.4s ease !important;
+  transition: all 0.4s ease !important;
 }
 
 .projects__item::before {
@@ -821,9 +824,9 @@ body.hidden {
 .projects__item-subtext {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: 0.6s ease-out;
-  -o-transition: 0.6s ease-out;
-  transition: 0.6s ease-out;
+  -webkit-transition: max-height 0.6s ease-out;
+  -o-transition: max-height 0.6s ease-out;
+  transition: max-height 0.6s ease-out;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
@@ -3055,7 +3058,10 @@ body.hidden {
   }
 
   .projects__item:hover .projects__item-subtext {
-    max-height: 200px;
+    max-height: 300px;
+    -webkit-transition: max-height 0.7s ease-in;
+    -o-transition: max-height 0.7s ease-in;
+    transition: max-height 0.7s ease-in;
   }
 
   .tehno__item:hover:before {
